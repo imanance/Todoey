@@ -7,7 +7,8 @@
 
 import Foundation
 
-class Item {
+//  Codable for using in NSCoder (encoding and decoding file)
+class Item: Codable {
     var title: String = ""
     var done: Bool = false
 }

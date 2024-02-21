@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         print("application Lifecycle: #1 \(#function)")
         
         // ../Library/Preferences -> is UserDefaults pList file
-        print(NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).last! as String)
+//        print(NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).last! as String)
         
         return true
     }
