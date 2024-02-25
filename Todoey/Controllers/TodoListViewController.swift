@@ -52,14 +52,20 @@ class TodoListViewController: UITableViewController {
         if let item = todoItems?[indexPath.row] {
             do {
                 try realm.write {
-                    item.done = !item.done
+//                    item.done = !item.done // this line is for Update
+                    
+                    realm.delete(item) // this line is for delete
                 }
             } catch {
                 print("Error saving done status, \(error)")
             }
         }
         
-        tableView.reloadRows(at: [indexPath], with: .automatic)
+        // this line is for Update
+//        tableView.reloadRows(at: [indexPath], with: .automatic)
+        
+        // this line is for Delete
+        tableView.deleteRows(at: [indexPath], with: .automatic)
         
 //        tableView.deselectRow(at: indexPath, animated: true)
     }
