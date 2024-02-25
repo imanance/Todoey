@@ -7,6 +7,7 @@
 
 import UIKit
 import CoreData
+import RealmSwift
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -43,6 +44,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             UITabBar.appearance().scrollEdgeAppearance = tabBarAppearance
             UITabBar.appearance().standardAppearance = tabBarAppearance
         }
+        
+        
+        // ## Realm
+        
+        print(Realm.Configuration.defaultConfiguration.fileURL)
+
+        
+        do {
+            let realm = try Realm()
+        } catch {
+            print("Error initialising new Realm, \(error)")
+        }
+        
         
         return true
     }
